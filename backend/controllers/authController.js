@@ -24,7 +24,7 @@ const registerUser = async(req, res, next) => {
 const loginUser = async(req, res, next) => {
     try {
         const user = await User.findOne({email: req.body.email})
-        if(!user) return next(createError(404, "User not found"))
+        if(!user) return next(createError(404, "User not found!!"))
 
         const isPasswordCorrect = await bcrypt.compare(req.body.password, user.password)
 
